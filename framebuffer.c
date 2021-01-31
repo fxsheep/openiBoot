@@ -189,6 +189,10 @@ static void scrollup565() {
 }
 
 void framebuffer_putc888(int c) {
+        if(Y == THeight) {
+                framebuffer_clear();
+        }
+
 	if(c == '\r') {
 		X = 0;
 	} else if(c == '\n') {
@@ -214,15 +218,20 @@ void framebuffer_putc888(int c) {
 		X = 0;
 		Y++;
 	}
-
+#if 0
 	if(Y == THeight) {
 		scrollup888();
 	}
+#endif
 }
 
 void framebuffer_putc565(int c) {
 	uint16_t fgcolor = BGR16(ForegroundColor);
 	uint16_t bgcolor = BGR16(BackgroundColor);
+
+        if(Y == THeight) {
+                framebuffer_clear();
+        }
 
 	if(c == '\r') {
 		X = 0;
@@ -250,9 +259,11 @@ void framebuffer_putc565(int c) {
 		Y++;
 	}
 
+#if 0
 	if(Y == THeight) {
 		scrollup565();
 	}
+#endif
 }
 
 void framebuffer_putc(int c)
