@@ -31,7 +31,6 @@ mainfn_t OpenIBootMain = NULL;
 void OpenIBootConsole()
 {
 	init_modules();
-	framebuffer_setdisplaytext(TRUE);
 	bufferPrintf(	"  ___                   _ ____              _   \r\n"
 					" / _ \\ _ __   ___ _ __ (_) __ )  ___   ___ | |_ \r\n"
 					"| | | | '_ \\ / _ \\ '_ \\| |  _ \\ / _ \\ / _ \\| __|\r\n"

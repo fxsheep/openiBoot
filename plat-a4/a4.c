@@ -56,8 +56,6 @@ void platform_init()
 	if(!displaypipe_init()) {
 		framebuffer_setup();
 		framebuffer_setdisplaytext(TRUE);
-		framebuffer_print("Framebuffer is working, but not showing output for awhile since scrolling is so slow during boot...\n");
-		framebuffer_setdisplaytext(FALSE);
 		lcd_set_backlight_level(1500);
 	}
 
