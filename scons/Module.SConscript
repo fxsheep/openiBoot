@@ -35,7 +35,7 @@ class Module:
 			env.Append(**a)
 
 def FindModule(env, name):
-	if env['MODULES'] != None and env['MODULES'].has_key(name):
+	if env['MODULES'] != None and (name in env['MODULES']):
 		return env['MODULES'][name]
 
 	return None
@@ -58,7 +58,7 @@ env.AddMethod(CreateModule, "CreateModule")
 def AddModule(env, name):
 	mod = env.FindModule(name)
 	if mod is None:
-		print "No such module %s." % name
+		print("No such module %s." % name)
 		return None
 
 	mod.Add(env)

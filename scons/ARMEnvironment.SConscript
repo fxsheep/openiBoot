@@ -15,8 +15,8 @@ def ARMEnvironment(*a, **kw):
 
 	env['PROGSUFFIX'] = ''
 
-	if not env.has_key("CROSS"):
-		if env['ENV'].has_key("CROSS"):
+	if "CROSS" not in env:
+		if "CROSS" in env['ENV']:
 			env['CROSS'] = env['ENV']['CROSS']
 		else:
 			env["CROSS"] = 'arm-elf-'
